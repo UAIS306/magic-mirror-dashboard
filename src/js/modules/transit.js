@@ -3,13 +3,17 @@
 var Mustache = require('mustache');
 var $ = require('jquery');
 var _ = require('lodash');
+var mapbox = require('../third_party/mapbox');
 
-var NOW = 'Now';
+var MAP_CENTER_LAT = 47.675696;
+var MAP_CENTER_LON = -122.376601;
+var ARRIVING_NOW_MESSAGING = 'Now';
 
 //30 Seconds
 var REFRESH_INTERVAL_30_SECONDS_IN_MS = 30 * 1000;
 
-var $container = $('.Layout--Transit')[0];
+var $listContainer = $('.Transit--list-view')[0];
+var $mapContainer = $('.Transit--map-view')[0];
 
 var template =  '{{#stops}}' +
                 '<div class="Transit--stop">' +
@@ -44,7 +48,7 @@ var calculateTimeToDepart = function(departureDate) {
   var diff = Math.abs(now - departureDate);
   var minutesToDeparture = Math.floor((diff/1000)/60);
   if (minutesToDeparture === 0) {
-    return NOW;
+    return ARRIVING_NOW_MESSAGING;
   }
   return minutesToDeparture + " Min.";
 }
@@ -81,7 +85,8 @@ var startTransitRenderRefresh = function() {
       stops: translateStops(data.data)
     };
     var output = Mustache.render(template, view);
-    $container.innerHTML = output;
+    $listContainer.innerHTML = output;
+    mapbox.render(MAP_CENTER_LAT, MAP_CENTER_LON, $mapContainer)
   }
 
   var renderTransitData = function() {

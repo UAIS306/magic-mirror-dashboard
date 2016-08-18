@@ -1,3 +1,20 @@
+.Transit--list-view {
+  width: 55%;
+}
+
+.Transit--map-view {
+  position: absolute;
+  overflow: hidden;
+  left:60%;
+  width:40%;
+  top:0;
+  bottom:0;
+}
+
+.Transit--map-view-container {
+
+}
+
 .Transit--stop-name {
   font-size: $font-size-medium;
   text-transform: uppercase;

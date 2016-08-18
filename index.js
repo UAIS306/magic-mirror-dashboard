@@ -7,7 +7,7 @@ app.set('view engine', 'pug');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Hello there!'});
+  res.render('index', { title: 'Magic Mirror' });
 });
 
 var transit = require('./routes/transit');

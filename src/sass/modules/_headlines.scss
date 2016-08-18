@@ -5,7 +5,7 @@
 
 .Headlines--headline-title {
   display: inline-block;
-  width: 70%;
+  width: 80%;
   text-align: left;
   &:before {
     content: "|";
@@ -16,7 +16,7 @@
 
 .Headlines--headline-section {
   display: inline-block;
-  width: 30%;
+  width: 20%;
   text-align: right;
   color: $color-light-secondary
 }

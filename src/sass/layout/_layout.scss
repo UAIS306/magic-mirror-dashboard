@@ -22,18 +22,19 @@
 
 .Layout--Transit {
   max-height: 50%;
-  max-width: 30%;
+  max-width: 35%;
+  width: 100%;
   position: fixed;
   text-align: right;
   left: 0;
   bottom: 0;
-  padding-left: $margin-default;
-  padding-bottom: $margin-default;
+  margin-left: $margin-default;
+  margin-bottom: $margin-default;
 }
 
 .Layout--Headlines {
   max-height: 50%;
-  max-width: 70%;
+  max-width: 60%;
   width: 100%;
   position: fixed;
   right: 0;

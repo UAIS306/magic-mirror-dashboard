@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
-var renderWidget = function(lat, lon, color, $attachPoint) {
+var renderWidget = function(color, $attachPoint) {
 
   (function(e, t) {
       function _(e) {
@@ -3968,7 +3968,7 @@ var renderWidget = function(lat, lon, color, $attachPoint) {
 }
 
 module.exports = {
-  render: function(lat, lon, color, $attachPoint) {
-    renderWidget(lat, lon, color, $attachPoint);
+  render: function(color, $attachPoint) {
+    renderWidget(color, $attachPoint);
   }
 }
